@@ -16,6 +16,7 @@ When we ran the system we saw we're not getting any readings from 2 specific sen
 After browsing through the internet and some minor assumptions we concluded that the ESP is unable to support 4 different sensors simultaniously, but only 2. 
 
 Fun story: During our intense 3-hours inverstigation trying to figure out what's the problem, we also tried to switch esps and such. As time progressed we discovered we recieve no power to the previously working sensors at all! Imagine trying to fix a minor problem and things just keep falling apart. Nonetheless we didn't give up and as the hours passed we decided to check the MCU by itself (outside the breadboard). We couldn't believe our eyes. When we switched esp's, the 3.3V pin had been smashed inside the breadboard and basically did not provide any power to the system. A simple bend with the plier and the system was back on track.
+
 ![Bent pin](https://user-images.githubusercontent.com/91986255/179001783-73ccc5d5-1d0a-473f-ac53-addc0dc241e5.jpeg)
 
 As we said, the esp was not suitable for our goal for one system to control more then 2 sensors. Therefore, we split the sensors between 2 different ESPs and connected them to the breadboard (carefully) and duplicated the systems in each box.
