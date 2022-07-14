@@ -1,7 +1,7 @@
 # Agrotech 2022 watering system project
 ## Project Goal
-We wanted to make an irrigation system that will automatically water the plants to keep the soil humidity ≤ 41%.
-We wanted to make the irrigation system specifically tuned for the different plants it is connected to because each plant is positioned a little differently than the others, which can lead to different values.
+We wanted to make an irrigation system that will automatically water the plants to keep the soil humidity regulated by our needs.
+We wanted to make the irrigation system specifically tuned for the different plants it is connected to because each plant is, like every life form, a bit different from the one next to him and we wanted to provide each plant with his own needs.
 
 ### The system structure
 We used the SH sensor in order to measure the soil humidity. the sensors send data to Thingspeak. The system calculates the VPD of each plant and
