@@ -38,6 +38,7 @@ Fun story: During our intense 3-hours inverstigation trying to figure out what's
 ![Bent pin](https://user-images.githubusercontent.com/91986255/179001783-73ccc5d5-1d0a-473f-ac53-addc0dc241e5.jpeg)
 
 As we said, the esp was not suitable for our goal for one system to control more then 2 sensors. Therefore, we split the sensors between 2 different ESPs and connected them to the breadboard (carefully) and duplicated the systems in each box.
+[click here for the prototype code](https://github.com/vitoska26/agrotech_project/blob/main/Accurate_soil_sensor_test_-_SINGLE_SENSOR.ino)
 
 ## The final outcome
 
@@ -49,6 +50,6 @@ As we said, the esp was not suitable for our goal for one system to control more
 
 We created a system that can water each plant individually using sm-capacity sensor for each plant. The system can respond very quickly (~several seconds) to changes in the soil and irrigate the plant accordingly.
 We placed the system on 2 pepper plants, 1 tomato plant and 1 corn.
-
+[click here for the final code](https://github.com/vitoska26/agrotech_project/blob/main/Accurate_soil_sensor_test-13-27.ino)
 ## Data analysis
 TODO
