@@ -4,7 +4,7 @@ We wanted to make an irrigation system that will automatically water the plants 
 The goal was to make an autonomous irrigation system that is specifically tuned for each plant because like every person, each plant is a bit different from the rest (even if they're from the same kind) and we wanted to provide each plant with his own needs.
 
 ### The system structure
-We used the capacitive soil moisture sensor in order to measure the soil moisture capacity. the sensors data is uploaded to our Thingspeak channel. The system calculates the moisture in the soil for each plant and if the soil moisture capacity drops below 42%, a solenoid valve is turned on and the plant is irrigated.
+We used the capacitive soil moisture sensor in order to measure the soil moisture capacity. the sensors data is uploaded to our Thingspeak channel. The system calculates the moisture in the soil for each plant and if the soil moisture capacity drops below 41%, a solenoid valve is turned on and the plant is irrigated.
 
 We started by building a prototype that measures the soil moisture capacity for one plant. When the moisture was ≤ 41%, the prototype irrigated the plant until the s.m passed 41%.
 
