@@ -13,14 +13,14 @@
 #define RP2 2
 #define RP15 15
 
+//ThingSpeak channel info
 unsigned long myChannelNumber = 1757836;
 const char * myWriteAPIKey = "PRMQ9ELIDYEHYWPA";
-//
+//wifi 
 const char* ssid = "agrotech-lab-1";
 const char* password="1Afuna2Gezer";
 
-
-//soil moisture sensor consts - sensor with added 1M ohm resistor - BY PIN LAYOUT
+//soil moisture sensor consts - numbered BY PIN LAYOUT
 const int dry35 = 2000;// value for dry sensor
 const int wet35 = 350;
 const int dry32 = 2100;// value for dry sensor
@@ -81,16 +81,16 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  //soil sensors
+  //soil sensors readings
   int sensorVal35 = analogRead(35);
   int sensorVal32 = analogRead(32);
-  //SH - Soil Humidity
+  //SH - Soil Humidity (Moisture)
   int SH35 = map(sensorVal35, wet35, dry35, 100, 0); 
-  Serial.print("Soil moisture in pepper plant is "); Serial.print(SH35);
+  Serial.print("Soil moisture in corn plant is "); Serial.print(SH35);
   Serial.println("%");  
   delay(100);
   int SH32 = map(sensorVal32, wet32, dry32, 100, 0); 
-  Serial.print("Soil moisture in tomato plant is "); Serial.print(SH32);
+  Serial.print("Soil moisture in #2 pepper plant is "); Serial.print(SH32);
   Serial.println("%");  
   delay(100);
 
@@ -98,7 +98,7 @@ void loop() {
   if (SH35<41){//if soil moisture 35 is below 41% *Data taken from the internet
     digitalWrite(RP15, LOW);//open the valve 
   }
-  if (SH35>=41){//if soil moisture 35 is bigger then 41%
+  if (SH35>=41){//if soil moisture 35 is bigger or equal to 41%
     digitalWrite(RP15, HIGH);//shut the valve off, or keep it shut
   }
   //sensor32 - relay 2 control
@@ -106,13 +106,16 @@ void loop() {
     digitalWrite(RP2, LOW);//open the valve 
   }
   
-  if (SH32>=41){//if soil moisture 32 is bigger then 41%
+  if (SH32>=41){//if soil moisture 32 is bigger or equal to 41%
     digitalWrite(RP2, HIGH);//shut the valve off, or keep it shut
   }
 //------------------------------------------------------------------------------------
   //Thingspeak:
-  ThingSpeak.setField(3,SH35); // soil moisture 35
-  ThingSpeak.setField(4,SH32); // soil moisture 32
+  //upload soil moisture capacity in each plant to to the appropriate channel
+  //ThingSpeak.setField(1,SH35); // soil moisture in #1 pepper plant
+  //ThingSpeak.setField(2,SH32); // soil moisture in tomato plant
+  ThingSpeak.setField(3,SH35); // soil moisture in corn plant
+  ThingSpeak.setField(4,SH32); // soil moisture in #2 pepper plant
 
   ThingSpeak.writeFields(myChannelNumber, myWriteAPIKey);
   Serial.println("uploaded to Thingspeak server....");
