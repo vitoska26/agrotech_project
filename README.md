@@ -14,8 +14,10 @@ We started by building a prototype that measures the soil moisture capacity for 
 
 
 
+
 ### The prototype
 ![Prototype](https://user-images.githubusercontent.com/91986255/179000675-68276c4d-32a7-4e2e-b659-fc2c33ef77c8.jpeg)
+![prototype (1)](https://user-images.githubusercontent.com/91986255/179176545-e2debb4b-fef2-4528-b08e-9c09273aa911.jpeg)
 
 Then, we wanted to use the system in order to monitor several plants at a time. We made it with one ESP and attached it 4 different SM sensors, relays, valves and irrigation systems.
 When we ran the system we saw we're not getting any readings from 2 specific sensors and thus leaving two plants un-irrigated :( 
