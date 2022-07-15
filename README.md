@@ -1,6 +1,6 @@
 # Agrotech 2022 watering system project
 ## Project Goal
-We wanted to make an irrigation system that will automatically water the plants to keep the soil humidity regulated by our needs.
+We wanted to make an irrigation system that will automatically water the plants to keep the soil moisture capacity regulated by our needs.
 The goal was to make an autonomous irrigation system that is specifically tuned for each plant because like every person, each plant is a bit different from the rest (even if they're from the same kind) and we wanted to provide each plant with his own needs.
 
 ### The system structure
