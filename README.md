@@ -11,8 +11,18 @@ We started by building a prototype that measures the soil moisture capacity for 
 
 ![WhatsApp Image 2022-07-15 at 10 37 36 (1)](https://user-images.githubusercontent.com/91986255/179176178-1d252728-0aa7-41e1-b55b-1299259295eb.jpeg)
 
+### The materials:
 
 
+for this system we used :
+* ESP32 microcontroller[click me](https://github.com/espressif/arduino-esp32)
+* Fullsize Bread Board
+* Relay [click me](https://randomnerdtutorials.com/esp32-relay-module-ac-web-server/)
+* Solenoid Valve[click me](https://bc-robotics.com/tutorials/controlling-a-solenoid-valve-with-arduino/)
+* Jumper cables
+* SH-soil moisture sensor[click me](https://esp32io.com/tutorials/esp32-soil-moisture-sensor)
+
+We researched a lot so we could use all the materials properly. We have included here the links that were most effective for us in building the system.
 
 
 ### The prototype
