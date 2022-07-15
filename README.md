@@ -8,6 +8,12 @@ We used the capacitive soil moisture sensor in order to measure the soil moistur
 
 We started by building a prototype that measures the soil moisture capacity for one plant. When the moisture was ≤ 41%, the prototype irrigated the plant until the s.m passed 41%.
 
+
+![WhatsApp Image 2022-07-15 at 10 37 36 (1)](https://user-images.githubusercontent.com/91986255/179176178-1d252728-0aa7-41e1-b55b-1299259295eb.jpeg)
+
+
+
+
 ### The prototype
 ![Prototype](https://user-images.githubusercontent.com/91986255/179000675-68276c4d-32a7-4e2e-b659-fc2c33ef77c8.jpeg)
 
