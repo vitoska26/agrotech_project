@@ -15,12 +15,12 @@ We started by building a prototype that measures the soil moisture capacity for 
 
 
 for this system we used :
-* ESP32 microcontroller[click me](https://github.com/espressif/arduino-esp32)
+* ESP32 microcontroller [click me](https://github.com/espressif/arduino-esp32)
 * Fullsize Bread Board
 * Relay [click me](https://randomnerdtutorials.com/esp32-relay-module-ac-web-server/)
-* Solenoid Valve[click me](https://bc-robotics.com/tutorials/controlling-a-solenoid-valve-with-arduino/)
+* Solenoid Valve [click me](https://bc-robotics.com/tutorials/controlling-a-solenoid-valve-with-arduino/)
 * Jumper cables
-* SH-soil moisture sensor[click me](https://esp32io.com/tutorials/esp32-soil-moisture-sensor)
+* SH-soil moisture sensor [click me](https://esp32io.com/tutorials/esp32-soil-moisture-sensor)
 
 We researched a lot so we could use all the materials properly. We have included here the links that were most effective for us in building the system.
 
