@@ -70,6 +70,6 @@ As we said, the esp was not suitable for our goal for one system to control more
 
 We created a system that can water each plant individually using sm-capacity sensor for each plant. The system can respond very quickly (~several seconds) to changes in the soil and irrigate the plant accordingly.
 We placed the system on 2 pepper plants, 1 tomato plant and 1 corn.
-[click here for the final code](https://github.com/vitoska26/agrotech_project/blob/main/Accurate_soil_sensor_test.ino)
+[click here for the final code](https://github.com/vitoska26/agrotech_project/blob/main/Irrigation_System.ino)
 ## Data analysis
 TODO
