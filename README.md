@@ -15,12 +15,32 @@ We started by building a prototype that measures the soil moisture capacity for 
 
 
 for this system we used :
-* ESP32 microcontroller [click me](https://github.com/espressif/arduino-esp32)
-* Fullsize Bread Board
-* Relay [click me](https://randomnerdtutorials.com/esp32-relay-module-ac-web-server/)
-* Solenoid Valve [click me](https://bc-robotics.com/tutorials/controlling-a-solenoid-valve-with-arduino/)
-* Jumper cables
-* CSM - capacitive soil moisture sensor [click me](https://esp32io.com/tutorials/esp32-soil-moisture-sensor)
+
+Electronics:
+
+* 2 ESP32 microcontrollers [click me](https://github.com/espressif/arduino-esp32)
+* 2 Fullsize BreadBoards
+* 4 Relays [click me](https://randomnerdtutorials.com/esp32-relay-module-ac-web-server/)
+* 4 Solenoid valves [click me](https://bc-robotics.com/tutorials/controlling-a-solenoid-valve-with-arduino/)
+* Multiple jumper cables
+* 4 capacitive soil moisture sensor [click me](https://esp32io.com/tutorials/esp32-soil-moisture-sensor)
+* 2 Buck converters [click me](https://www.youtube.com/watch?v=TNR57IjVplY)
+
+Hardware:
+
+* 2 Electric Boxes
+* 12V Power source
+* Multiple electric wires
+
+Irrigation System:
+
+* 16mm Plastic tubes 
+* 4 Liters/h irrigation nozzels by Netafim
+* 16 4mm Sub-Surface irrigation drips
+
+Disclaimers:
+* As mentioned above the esp is able to monitor up to 2 sensors at a time so the code is for 2 sensors only. in order to keep both systems as much alike as possible, the code at the #2 esp is the same except the THINGSPEAK channel it's uploading to
+* the 41% mark was decided based on internet data about most plants with emphasis on high clay soils such as our.
 
 We researched a lot so we could use all the materials properly. We have included here the links that were most effective for us in building the system.
 
