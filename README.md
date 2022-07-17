@@ -1,63 +1,62 @@
 # Agrotech 2022 watering system project
 ## Project Goal
-We wanted to make an irrigation system that will automatically water the plants to keep the soil moisture capacity regulated by our needs.
-The goal was to make an autonomous irrigation system that is specifically tuned for each plant because like every person, each plant is a bit different from the rest (even if they're from the same kind) and we wanted to provide each plant with his own needs.
+We wanted to make an irrigation system that will automatically water the plants to keep the soil moisture capacity regulated by their needs.
+The goal was to make an autonomous irrigation system that is specifically tuned for each plant because like every person, each plant is a bit different from the rest The system should be able to cut costs in terms of both water and man-power.
 
-### The system structure
-We used the capacitive soil moisture sensor in order to measure the soil moisture capacity. the sensors data is uploaded to our Thingspeak channel. The system calculates the moisture in the soil for each plant and if the soil moisture capacity drops below 41%, a solenoid valve is turned on and the plant is irrigated.
+### System Concept
+We used the capacitive soil moisture sensors in order to measure the soil moisture capacity. The sensors data is uploaded to our [Thingspeak Channel](https://thingspeak.com/channels/1757836). The system calculates the moisture in the soil for each plant individualy and each plant is irrigated when the soil's moisture drops below it's specific mark.
+![]([https://i.gifer.com/73TI.gif](https://github.com/vitoska26/agrotech_project/blob/main/Extras/73TI.gif)
 
-We started by building a prototype that measures the soil moisture capacity for one plant. When the moisture was ≤ 41%, the prototype irrigated the plant until the s.m passed 41%.
-
-
-![WhatsApp Image 2022-07-15 at 10 37 36 (1)](https://user-images.githubusercontent.com/91986255/179176178-1d252728-0aa7-41e1-b55b-1299259295eb.jpeg)
-
-### The materials:
+### Components:
 
 
-for this system we used :
+For one irrigation computer we used :
 
 Electronics:
 
-* 2 ESP32 microcontrollers [click me](https://randomnerdtutorials.com/getting-started-with-esp32/)
-* 2 Fullsize BreadBoards
-* 4 Relays [click me](https://randomnerdtutorials.com/esp32-relay-module-ac-web-server/)
-* 4 Solenoid valves [click me](https://bc-robotics.com/tutorials/controlling-a-solenoid-valve-with-arduino/)
+* x1 ESP32 microcontrollers [click me](https://randomnerdtutorials.com/getting-started-with-esp32/)
+* x1 Fullsize BreadBoards [click me](https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard)
+* x2 Relays [click me](https://randomnerdtutorials.com/esp32-relay-module-ac-web-server/)
+* x2 Solenoid valves [click me](https://bc-robotics.com/tutorials/controlling-a-solenoid-valve-with-arduino/)
 * Multiple jumper cables
-* 4 capacitive soil moisture sensor [click me](https://esp32io.com/tutorials/esp32-soil-moisture-sensor)
-* 2 Buck converters [click me](https://www.youtube.com/watch?v=TNR57IjVplY)
+* x2 capacitive soil moisture sensor [click me](https://esp32io.com/tutorials/esp32-soil-moisture-sensor)
+* x1 Buck converters [click me](https://www.youtube.com/watch?v=TNR57IjVplY)
+* *recommanded - x2 1MΩ resistor  
 
 Hardware:
 
-* 2 Electric Boxes
+* x1 Electric Boxes
 * 12V Power source
 * Multiple electric wires
 
 Irrigation System:
 
 * 16mm Plastic tubes 
-* 4 Liters/h irrigation nozzels by Netafim
-* 16 4mm Sub-Surface irrigation drips
+* x2 4 Liters/h irrigation nozzels by Netafim
+* x8 4mm Sub-Surface irrigation drips
 
 Disclaimers:
-* As mentioned above the esp is able to monitor up to 2 sensors at a time so the code is for 2 sensors only. in order to keep both systems as much alike as possible, the code at the #2 esp is the same except the THINGSPEAK channel it's uploading to
+* We were able to monitor up to 2 sensors at a time so the code is for 2 sensors only. in order to keep both systems as much alike as possible, the code at the #2 esp is the same except the THINGSPEAK channel it's uploading to, and the SM mark.
 * Each type of plant was irrigated by a different soil moisture percentage marks decided by previous researches.
 
 We researched a lot so we could use all the materials properly. We have included here the links that were most effective for us in building the system.
 
+# Construction:
 
-### The prototype
-![Prototype](https://user-images.githubusercontent.com/91986255/179000675-68276c4d-32a7-4e2e-b659-fc2c33ef77c8.jpeg)
-![prototype (1)](https://user-images.githubusercontent.com/91986255/179176545-e2debb4b-fef2-4528-b08e-9c09273aa911.jpeg)
+## prototype
+First we developed the basic structure of the system. Basic valve-relay-esp interactions can be seen [here](https://github.com/vitoska26/agrotech_project/blob/main/Images/basic%20circuit.jpeg).
+Then we installed our system into a water-proof electrical box, testing it using one sensor [click me](https://github.com/vitoska26/agrotech_project/blob/main/Images/first%20prototype.jpeg)
+### Adjustments
+* While the valve is 12V DC, the esp and other components require 3.3V-5V. In order to reduce to voltage we used this [Buck convertor](https://www.youtube.com/watch?v=TNR57IjVplY), taking the voltage down from 12V to 5V and to the esp.
+* Because we're working in a wet environment, we needed to make our sensors water-resistable. For that we did two things:
+  1. Ditch the f-f cables that comes with the sensor and create your own cable. Connect it to the sensor for greater range and safety. 
+  2. When the system is almost ready, put some silicone on the top part of the sensor, as can be seen [here](https://github.com/vitoska26/agrotech_project/blob/main/Images/Corn%20Plant.jpeg).
+* While we did not have time to implement this in our project, you can make your sensors even more accurate, using a 1MΩ resistor. [watch here](https://www.youtube.com/watch?v=IGP38bz-K48&t=1s) for more. 
 
-Then, we wanted to use the system in order to monitor several plants at a time. We made it with one ESP and attached it 4 different SM sensors, relays, valves and irrigation systems.
-When we ran the system we saw we're not getting any readings from 2 specific sensors and thus leaving two plants un-irrigated :( 
-After browsing through the internet and some minor assumptions we concluded that the ESP is unable to support 4 different sensors simultaniously, but only 2. 
-
-Fun story: During our intense 3-hours inverstigation trying to figure out what's the problem, we also tried to switch esps and such. As time progressed we discovered we recieve no power to the previously working sensors at all! Imagine trying to fix a minor problem and things just keep falling apart. Nonetheless we didn't give up and as the hours passed we decided to check the MCU by itself (outside the breadboard). We couldn't believe our eyes. When we switched esp's, the 3.3V pin had been smashed inside the breadboard and basically did not provide any power to the system. A simple bend with the plier and the system was back on track.
-
-![Bent pin](https://user-images.githubusercontent.com/91986255/179001783-73ccc5d5-1d0a-473f-ac53-addc0dc241e5.jpeg)
-
-As we said, the esp was not suitable for our goal for one system to control more then 2 sensors. Therefore, we split the sensors between 2 different ESPs and connected them to the breadboard (carefully) and duplicated the systems in each box.
+## Fritzing Sketch
+# Water System
+Water flow needs to be constant all the time. Connect your main tube to the water source and then divide it between the various spots you'll want to water. We recommand the following layout [click me](https://github.com/vitoska26/agrotech_project/blob/main/Images/irrigation%20layout.jpeg).
+Using the 4L/h nozzles make an exit for the drippers to connect. Stick the drippers close to the plant's roots. We've concluded that for maximize control it is recommanded to place 3 drippers at various points and one dripper in the close proximity of the sensor, in order to not water it to much.
 
 
 ## The final outcome
@@ -70,6 +69,6 @@ As we said, the esp was not suitable for our goal for one system to control more
 
 We created a system that can water each plant individually using sm-capacity sensor for each plant. The system can respond very quickly (~several seconds) to changes in the soil and irrigate the plant accordingly.
 We placed the system on 2 pepper plants, 1 tomato plant and 1 corn.
-[click here for the final code](https://github.com/vitoska26/agrotech_project/blob/main/Irrigation_System.ino)
+[click here for the system's code](https://github.com/vitoska26/agrotech_project/blob/main/Code/Sensor_Controlled_Irrigation_System.ino)
 ## Data analysis
 TODO
