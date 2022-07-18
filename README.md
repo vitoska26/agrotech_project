@@ -4,7 +4,7 @@ We wanted to make an irrigation system that will water the plants and will keep 
 The goal was to make an autonomous irrigation system that is specifically tuned for each plant because like every person, each plant is a bit different from the rest. The system's vision is to be able to cut costs in terms of both water and man-power.
 
 ### System Concept
-We used the capacitive soil moisture sensors in order to measure the soil moisture capacity. The data is uploaded to our [Thingspeak Channel](https://thingspeak.com/channels/1757836). The system calculates the moisture in the soil for each plant individualy and each plant is irrigated when the soil's moisture drops below it's specific mark.
+We used the capacitive soil moisture sensors in order to measure the soil moisture capacity. The data is uploaded to our [Thingspeak Channel](https://thingspeak.com/channels/1757836). The system calculates the moisture in the soil for each plant individualy and each plant is irrigated when the soil's moisture drops below it's specific mark. Click [here](https://github.com/vitoska26/agrotech_project/blob/main/Extras/Project%20Sketch.pdf) for the greenhouse layout.
 
 ![](https://github.com/vitoska26/agrotech_project/blob/main/Extras/73TI.gif)
 
