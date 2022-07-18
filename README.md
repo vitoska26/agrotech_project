@@ -64,8 +64,8 @@ Legend
   * Orange - VCC for sensors and analog pins for relays (also yellow)
   * Brown - 12V power supply or GND for relays and sensors
 # Water System
-Water flow needs to be constant all the time. Connect your main tube to the water source and then divide it between the various spots you'll want to water. We recommand the following layout [click me](https://github.com/vitoska26/agrotech_project/blob/main/Images/irrigation%20layout.jpeg).
-Using the 4L/h nozzles make an exit for the drippers to connect. Stick the drippers close to the plant's roots. We've concluded that for maximize control it is recommanded to place 3 drippers at various points and one dripper in the close proximity of the sensor, in order to not water it to much.
+Water flow needs to be constant at all time. Connect your main tube to the water source and then divide it between the various spots you'll want to irrigate. We recommand the following layout [click me](https://github.com/vitoska26/agrotech_project/blob/main/Images/irrigation%20layout.jpeg).
+Using the 4L/h nozzles make an exit for the drippers to connect. Stick the drippers close to the plant's roots. We've concluded that for maximize control it is recommanded to place 3 drippers at various points and one dripper in the close proximity of the sensor, in order to not over irrigate the plant.
 
 # Code
 * Start by calibrating your sensor's wet&dry values. you can use this [link](https://github.com/vitoska26/agrotech_project/blob/main/Code/soil_moisture_sensor_calibrating.ino)
