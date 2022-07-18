@@ -5,7 +5,8 @@ The goal was to make an autonomous irrigation system that is specifically tuned 
 
 ### System Concept
 We used the capacitive soil moisture sensors in order to measure the soil moisture capacity. The sensors data is uploaded to our [Thingspeak Channel](https://thingspeak.com/channels/1757836). The system calculates the moisture in the soil for each plant individualy and each plant is irrigated when the soil's moisture drops below it's specific mark.
-![]([https://i.gifer.com/73TI.gif](https://github.com/vitoska26/agrotech_project/blob/main/Extras/73TI.gif)
+
+![](https://github.com/vitoska26/agrotech_project/blob/main/Extras/73TI.gif)
 
 ### Components:
 
@@ -49,17 +50,31 @@ Then we installed our system into a water-proof electrical box, testing it using
 ### Adjustments
 * While the valve is 12V DC, the esp and other components require 3.3V-5V. In order to reduce to voltage we used this [Buck convertor](https://www.youtube.com/watch?v=TNR57IjVplY), taking the voltage down from 12V to 5V and to the esp.
 * Because we're working in a wet environment, we needed to make our sensors water-resistable. For that we did two things:
-  1. Ditch the f-f cables that comes with the sensor and create your own cable. Connect it to the sensor for greater range and safety. 
-  2. When the system is almost ready, put some silicone on the top part of the sensor, as can be seen [here](https://github.com/vitoska26/agrotech_project/blob/main/Images/Corn%20Plant.jpeg).
+  - [x]  Ditch the f-f cables that comes with the sensor and create your own cable. Connect it to the sensor for greater range and safety. 
+  - [x] When the system is almost ready, put some silicone on the top part of the sensor, as can be seen [here](https://github.com/vitoska26/agrotech_project/blob/main/Images/Corn%20Plant.jpeg).
+* Relays have 2 working options: Normally closed or Normally open. We want our circuit to be always **open** (NO) in order for the valve to be shut. Make sure to test your valve as some will work the other opposite way. 
 * While we did not have time to implement this in our project, you can make your sensors even more accurate, using a 1MΩ resistor. [watch here](https://www.youtube.com/watch?v=IGP38bz-K48&t=1s) for more. 
 
 ## Fritzing Sketch
+![](https://github.com/vitoska26/agrotech_project/blob/main/Extras/fritzing_bb.png)
+Legend
+  * Red - VCC
+  * Blue - GND for 12V components or analog read for sensors
+  * Black - GND
+  * Orange - VCC for sensors and analog pins for relays (also yellow)
+  * Brown - 12V power supply or GND for relays and sensors
 # Water System
 Water flow needs to be constant all the time. Connect your main tube to the water source and then divide it between the various spots you'll want to water. We recommand the following layout [click me](https://github.com/vitoska26/agrotech_project/blob/main/Images/irrigation%20layout.jpeg).
 Using the 4L/h nozzles make an exit for the drippers to connect. Stick the drippers close to the plant's roots. We've concluded that for maximize control it is recommanded to place 3 drippers at various points and one dripper in the close proximity of the sensor, in order to not water it to much.
 
+# Code
+* Start by calibrating your sensor's wet&dry values. you can use this [link](https://github.com/vitoska26/agrotech_project/blob/main/Code/soil_moisture_sensor_calibrating.ino)
+* Learn to use your valve. All our relays are set to **NO** but your valve might work the other way around, and will allow the flow of water when the relay's state is **open**. In order to counter that just set your relay to NC - Normally closed. [click here for the code](https://github.com/vitoska26/agrotech_project/blob/main/Code/RELAY_sketch.ino) and [here](https://www.youtube.com/watch?v=zIHPogas1cU) to learn about relays.  
+* After assembling the system itself, just load this [code](https://github.com/vitoska26/agrotech_project/blob/main/Code/Sensor_Controlled_Irrigation_System.ino) into your MCU. 
 
-## The final outcome
+**important:** In order to load the code into the MCU successfully, make sure the circuit is open and the esp's only power source is your computer, via the usb cable. 
+
+# The final outcome
 
 ![WhatsApp Image 2022-07-14 at 16 50 08](https://user-images.githubusercontent.com/91986255/179002137-ef69bb09-e792-4f0a-be5d-d7007f262c5a.jpeg)
 ![WhatsApp Image 2022-07-14 at 16 50 09](https://user-images.githubusercontent.com/91986255/179002213-14f661ef-38e4-4d9a-a6d1-49d43fabdad2.jpeg)
