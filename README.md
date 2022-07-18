@@ -50,8 +50,8 @@ Then we installed our system into a water-proof electrical box, testing it using
 ### Adjustments
 * While the valve is 12V DC, the esp and other components require 3.3V-5V. In order to reduce to voltage we used this [Buck convertor](https://www.youtube.com/watch?v=TNR57IjVplY), taking the voltage down from 12V to 5V and to the esp.
 * Because we're working in a wet environment, we needed to make our sensors water-resistable. For that we did two things:
-  - [x]  Ditch the f-f cables that comes with the sensor and create your own cable. Connect it to the sensor for greater range and safety. 
-  - [x] When the system is almost ready, put some silicone on the top part of the sensor, as can be seen [here](https://github.com/vitoska26/agrotech_project/blob/main/Images/Corn%20Plant.jpeg).
+  - [x] Ditch the f-f cables that comes with the sensor and create your own cable. Connect it to the sensor for greater range and safety. 
+  - [x] When the system is almost ready, put some silicone on the top part of the sensor, as can be seen [here](https://github.com/vitoska26/agrotech_project/blob/main/Images/Corn%20Plant.jpeg). The silicone might change your sensor's consts, so check'em again.
 * Relays have 2 working options: Normally closed or Normally open. We want our circuit to be always **open** (NO) in order for the valve to be shut. Make sure to test your valve as some will work the other opposite way. 
 * While we did not have time to implement this in our project, you can make your sensors even more accurate, using a 1MΩ resistor. [watch here](https://www.youtube.com/watch?v=IGP38bz-K48&t=1s) for more. 
 
