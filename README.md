@@ -1,7 +1,7 @@
-# Agrotech 2022 watering system project
+# Agrotech 2022 Automated Irrigation System project
 ## Project Goal
-We wanted to make an irrigation system that will automatically water the plants to keep the soil moisture capacity regulated by their needs.
-The goal was to make an autonomous irrigation system that is specifically tuned for each plant because like every person, each plant is a bit different from the rest The system should be able to cut costs in terms of both water and man-power.
+We wanted to make an irrigation system that will water the plants and will keep the soil moisture capacity regulated using a simple sensor.
+The goal was to make an autonomous irrigation system that is specifically tuned for each plant because like every person, each plant is a bit different from the rest. The system's vision is to be able to cut costs in terms of both water and man-power.
 
 ### System Concept
 We used the capacitive soil moisture sensors in order to measure the soil moisture capacity. The sensors data is uploaded to our [Thingspeak Channel](https://thingspeak.com/channels/1757836). The system calculates the moisture in the soil for each plant individualy and each plant is irrigated when the soil's moisture drops below it's specific mark.
@@ -37,7 +37,7 @@ Irrigation System:
 * x8 4mm Sub-Surface irrigation drips
 
 Disclaimers:
-* We were able to monitor up to 2 sensors at a time so the code is for 2 sensors only. in order to keep both systems as much alike as possible, the code at the #2 esp is the same except the THINGSPEAK channel it's uploading to, and the SM mark.
+* We were able to monitor up to 2 sensors at a time so the code is for 2 sensors only. In order to keep both systems as much alike as possible, the code at the #2 esp is the same except the THINGSPEAK channel it's uploading to, and the SM mark.
 * Each type of plant was irrigated by a different soil moisture percentage marks decided by previous researches.
 
 We researched a lot so we could use all the materials properly. We have included here the links that were most effective for us in building the system.
@@ -84,6 +84,11 @@ Using the 4L/h nozzles make an exit for the drippers to connect. Stick the dripp
 
 We created a system that can water each plant individually using sm-capacity sensor for each plant. The system can respond very quickly (~several seconds) to changes in the soil and irrigate the plant accordingly.
 We placed the system on 2 pepper plants, 1 tomato plant and 1 corn.
-[click here for the system's code](https://github.com/vitoska26/agrotech_project/blob/main/Code/Sensor_Controlled_Irrigation_System.ino)
+
 ## Data analysis
 TODO
+
+# See Also
+* [similar project](https://www.researchgate.net/publication/332254393_AUTOMATIC_WATERING_DEVICE_FOR_TOMATO_USING_SOIL_MOISTURE_SENSOR)
+* [Article](https://www.researchgate.net/publication/239848253_Irrigation_Scheduling_for_Green_Bell_Peppers_Using_Capacitance_Soil_Moisture_Sensors) about how an irrigation system regulated by soil sensors instead of traditionial time regulated system dicreased the water usage by up to 62% while achieving same yield quantities.
+* [Learn to water your crops](https://www.delmhorst.com/blog/whats-the-ideal-moisture-level-for-soil-to-grow-crops) 
