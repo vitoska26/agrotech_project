@@ -15,18 +15,18 @@ For one irrigation computer we used :
 
 Electronics:
 
-* x1 ESP32 microcontrollers [click me](https://randomnerdtutorials.com/getting-started-with-esp32/)
-* x1 Fullsize BreadBoards [click me](https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard)
+* x1 ESP32 microcontroller [click me](https://randomnerdtutorials.com/getting-started-with-esp32/)
+* x1 Fullsize BreadBoard [click me](https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard)
 * x2 Relays [click me](https://randomnerdtutorials.com/esp32-relay-module-ac-web-server/)
 * x2 Solenoid valves [click me](https://bc-robotics.com/tutorials/controlling-a-solenoid-valve-with-arduino/)
 * Multiple jumper cables
 * x2 capacitive soil moisture sensor [click me](https://esp32io.com/tutorials/esp32-soil-moisture-sensor)
-* x1 Buck converters [click me](https://www.youtube.com/watch?v=TNR57IjVplY)
-* *recommanded - x2 1MΩ resistor  
+* x1 Buck converter [click me](https://www.youtube.com/watch?v=TNR57IjVplY)
+* *recommanded - x2 1MΩ resistors  
 
 Hardware:
 
-* x1 Electric Boxes
+* x1 Electric Boxe
 * 12V Power source
 * Multiple electric wires
 
@@ -37,8 +37,8 @@ Irrigation System:
 * x8 4mm Sub-Surface irrigation drips
 
 Disclaimers:
-* We were able to monitor up to 2 sensors at a time so the code is for 2 sensors only. In order to keep both systems as much alike as possible, the code at the #2 esp is the same except the THINGSPEAK channel it's uploading to, and the SM mark.
-* Each type of plant was irrigated by a different soil moisture percentage marks decided by previous researches.
+* We were able to monitor up to 2 sensors at a time so the code is for 2 sensors only. In order to keep both systems as much alike as possible, the code at the #2 esp is the same except the THINGSPEAK channel it's uploading to, and of course the SM mark.
+* Each type of plant was irrigated by a different soil moisture percentage mark based on previous studies.
 
 We researched a lot so we could use all the materials properly. We have included here the links that were most effective for us in building the system.
 
@@ -48,12 +48,12 @@ We researched a lot so we could use all the materials properly. We have included
 First we developed the basic structure of the system. Basic valve-relay-esp interactions can be seen [here](https://github.com/vitoska26/agrotech_project/blob/main/Images/basic%20circuit.jpeg).
 Then we installed our system into a water-proof electrical box, testing it using one sensor [click me](https://github.com/vitoska26/agrotech_project/blob/main/Images/first%20prototype.jpeg)
 ### Adjustments
-* While the valve is 12V DC, the esp and other components require 3.3V-5V. In order to reduce to voltage we used this [Buck convertor](https://www.youtube.com/watch?v=TNR57IjVplY), taking the voltage down from 12V to 5V and to the esp.
+* While the valve is 12V DC, the esp and other components require 3.3V-5V. In order to reduce to voltage we used this [buck convertor](https://www.youtube.com/watch?v=TNR57IjVplY), taking the voltage down from 12V to 5V and to the esp.
 * Because we're working in a wet environment, we needed to make our sensors water-resistable. For that we did two things:
   - [x] Ditch the f-f cables that comes with the sensor and create your own cable. Connect it to the sensor for greater range and safety. 
-  - [x] When the system is almost ready, put some silicone on the top part of the sensor, as can be seen [here](https://github.com/vitoska26/agrotech_project/blob/main/Images/Corn%20Plant.jpeg). The silicone might change your sensor's consts, so check'em again.
+  - [x] When the system is almost ready, put some silicone on the top part of the sensor, as can be seen [here](https://github.com/vitoska26/agrotech_project/blob/main/Images/Corn%20Plant.jpeg). The silicone might change your sensor's consts, so check them again.
 * Relays have 2 working options: Normally closed or Normally open. We want our circuit to be always **open** (NO) in order for the valve to be shut. Make sure to test your valve as some will work the other opposite way. 
-* While we did not have time to implement this in our project, you can make your sensors even more accurate, using a 1MΩ resistor. [watch here](https://www.youtube.com/watch?v=IGP38bz-K48&t=1s) for more. 
+* While we did not have time to implement this in our project, you can make your sensor even more accurate, using a 1MΩ resistor. [watch here](https://www.youtube.com/watch?v=IGP38bz-K48&t=1s) for more. 
 
 ## Fritzing Sketch
 ![](https://github.com/vitoska26/agrotech_project/blob/main/Extras/fritzing_bb.png)
@@ -69,8 +69,8 @@ Using the 4L/h nozzles make an exit for the drippers to connect. Stick the dripp
 
 # Code
 * Start by calibrating your sensor's wet&dry values. you can use this [link](https://github.com/vitoska26/agrotech_project/blob/main/Code/soil_moisture_sensor_calibrating.ino)
-* Learn to use your valve. All our relays are set to **NO** but your valve might work the other way around, and will allow the flow of water when the relay's state is **open**. In order to counter that just set your relay to NC - Normally closed. [click here for the code](https://github.com/vitoska26/agrotech_project/blob/main/Code/RELAY_sketch.ino) and [here](https://www.youtube.com/watch?v=zIHPogas1cU) to learn about relays.  
-* After assembling the system itself, just load this [code](https://github.com/vitoska26/agrotech_project/blob/main/Code/Sensor_Controlled_Irrigation_System.ino) into your MCU. 
+* Learn to use your valve. All our relays are set to **HIGH** while shut and **LOW** when watering is needed. Your valve might work the other way around, and will allow the flow of water when the relay is set to **HIGH**. In order to counter that check your valve using the [relay code](https://github.com/vitoska26/agrotech_project/blob/main/Code/RELAY_sketch.ino) and [here](https://www.youtube.com/watch?v=zIHPogas1cU) to learn about relays.  
+* After assembling the system itself, you're welcome to load our [code](https://github.com/vitoska26/agrotech_project/blob/main/Code/Sensor_Controlled_Irrigation_System.ino) into your MCU. 
 
 **important:** In order to load the code into the MCU successfully, make sure the circuit is open and the esp's only power source is your computer, via the usb cable. 
 
@@ -86,7 +86,10 @@ We created a system that can water each plant individually using sm-capacity sen
 We placed the system on 2 pepper plants, 1 tomato plant and 1 corn.
 
 ## Data analysis
-TODO
+![](https://github.com/vitoska26/agrotech_project/blob/main/Images/pepper%20plant%2015.7%20example.png)
+
+I think this graph shows all of what we wanted to achieve in this project. Green is VPD, orange is the soil moisture percentage. Graph shows time laps of 3-hrs for the entire day of the 15th of July. As can be seen, the highest point of the sm was at the start of the day, the drop start right at dawn, around 5:30 AM. That's is also the time the VPD started rising, causing water to evaporate from the soil (and the plant). The sm is the lowest at noon which is also the highest point of the VPD measurments. To simplify it, the evaporation in this point is the greatest and that is not good for our plant, however, the sm does not rise. The reason for that is that the valve did not open, due to the sm mark which was at 41% which was at the time our decided optimal sm percentage for bell peppers. Thus the plant is irrigated only when it's needed.
+Big Thank you to Zeev, Imri and Alex for sharing their data with us! Check out their [GitHub Page](https://github.com/Alevegreen/Agtechcourse_finproject) 
 
 # See Also
 * [similar project](https://www.researchgate.net/publication/332254393_AUTOMATIC_WATERING_DEVICE_FOR_TOMATO_USING_SOIL_MOISTURE_SENSOR)
