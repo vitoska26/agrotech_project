@@ -89,7 +89,7 @@ We placed the system on 2 pepper plants, 1 tomato plant and 1 corn.
 ![](https://github.com/vitoska26/agrotech_project/blob/main/Images/pepper%20plant%2015.7%20example.png)
 
 We think this graph shows all of what we wanted to achieve in this project. Green is VPD, orange is the soil moisture percentage. Graph shows time laps of 3-hrs for the entire day of the 15th of July. As can be seen, the highest point of the sm was at the start of the day, the drop start right at dawn, around 5:30 AM. That's is also the time the VPD started rising, causing water to evaporate from the soil (and the plant). The sm is the lowest at noon which is also the highest point of the VPD measurments. To simplify it, the evaporation at this point is the greatest and in general we would've watered it. However, the sm does not rise. The reason for that is that the valve did not open, due to the sm mark which was at 41% which was at the time our decided optimal coil moisture capacity for bell peppers. Thus the plant is irrigated only when it's needed.
-Big Thank you to Zeev, Imri and Alex for sharing their data with us! Check out their [GitHub Page](https://github.com/Alevegreen/Agtechcourse_finproject) 
+Shout out to Zeev, Imri and Alex for sharing their data with us! Check out their [project](https://github.com/Alevegreen/Agtechcourse_finproject) 
 
 # See Also
 * [similar project](https://www.researchgate.net/publication/332254393_AUTOMATIC_WATERING_DEVICE_FOR_TOMATO_USING_SOIL_MOISTURE_SENSOR)
